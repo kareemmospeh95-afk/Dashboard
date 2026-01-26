@@ -14,7 +14,11 @@
     justify-content: space-between;
     align-items: center;
 }
-
+.justify-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -161,7 +165,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 3px;
+    margin-right: 1px;
     color: var(--secoend);
     height: 30px;
     width: 30px;
@@ -171,7 +175,7 @@ img{
 
 .side .new {
     background-color: var(--main);
-    font-weight: 700;
+    font-weight: 600;
     padding: 3px;
     border-radius: 5px;
     text-align: center;
@@ -181,6 +185,7 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 15px;
 }
 
 .side .new:hover {
@@ -188,7 +193,7 @@ img{
 }
 
 .content {
-    background-color: #19e65e;
+    background-color: #eef1efa9;
     width: 100%;
 }
 
@@ -222,8 +227,20 @@ nav .search i {
     width: 100%;
 }
  nav .notf .i{
-    margin-right: 3px;
+    margin-right: 10px;
     color: #6b6868;
+    position: relative;
+}
+
+ nav .notf .i::before{
+   position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--main);
+    border-radius: 50%;
+    right: -2px;
+    top: -2px;
 }
 .content nav .holder{
     width: 40px;
@@ -232,4 +249,70 @@ nav .search i {
 }
 .content nav img{
     border-radius: 50%;
+}
+.content > h2{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.content > p{
+    margin-left: 15px;
+    color: gray;
+}
+@media (min-width: 350px) {
+    .content > p{
+      font-size: 13px;
+}
+}
+
+.wrapper{
+    padding: 15px;
+    width: 100%;
+}
+
+.wrapper .tasks{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.wrapper .tasks .boxs{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+@media (max-width: 619px) and (min-width: 350px){
+    .wrapper .tasks{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+@media (max-width: 519px){
+    .wrapper .tasks .boxs{
+    flex-direction: column; 
+    text-align: center;  
+}
+}
+.tasks .boxs p{
+    font-size: 13px;
+    color: gray;
+}
+.tasks .boxs h3{
+    font-size: 30px;
+    font-weight: 900;
+}
+.tasks .boxs span{
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    height: 20px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #19e65d33;
+    color: var(--main);
+}
+.tasks .boxs .red{
+    background-color: #e619194b;
+    color: #e61919;
 }
