@@ -1,6 +1,7 @@
 :root {
   --main: #19e65e;
   --secoend: #1a1a1a;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -22,6 +23,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -69,6 +71,9 @@ button {
   display: flex;
   gap: 1rem;
 }
+i{
+  cursor: pointer;
+}
 img {
   max-width: 100%;
 }
@@ -89,9 +94,8 @@ img {
 
 .side {
   background: var(--secoend);
-  height: 100%;
+  min-height: 100%;
   padding: 15px;
-  min-height: 100vh;
 }
 
 @media (max-width: 767px) {
@@ -200,7 +204,7 @@ img {
 }
 
 .content {
-  background-color: #2c2c2ce8;
+  background-color: #eee;
   width: 100%;
 }
 
@@ -274,17 +278,24 @@ nav .notf .i::before {
 .wrapper {
   padding: 15px;
   width: 100%;
+}
+section.cards {
+  margin-bottom: 15px;
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+@media (min-width: 1259px) {
+  section.cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .wrapper .boxs {
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
-  height: 150px;
-  margin: auto 0px;
+  box-shadow: 0px 3px 5px var(--shadow);
 }
 
 .wrapper .boxs p {
@@ -313,11 +324,21 @@ nav .notf .i::before {
   color: #e61919;
 }
 
+section.circle {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
 .task-prog {
   background-color: white;
   padding: 15px;
   border-radius: 10px;
+  max-width: 280px;
+  width: 100%;
+  box-shadow: 0px 3px 5px var(--shadow);
 }
+
 .line {
   width: 150px;
   height: 150px;
@@ -363,6 +384,22 @@ nav .notf .i::before {
   background-color: white;
   padding: 15px;
   border-radius: 10px;
+  flex: 1;
+  min-width: 0;
+  box-shadow: 0px 3px 5px var(--shadow);
+}
+@media (max-width: 767px) {
+  section.circle {
+    flex-direction: column;
+  }
+
+  .task-prog {
+    width: 100%;
+  }
+
+  .team {
+    width: 100%;
+  }
 }
 
 .team .title {
@@ -385,6 +422,9 @@ nav .notf .i::before {
   padding-left: 10px;
   position: relative;
 }
+.crowe .row h3{
+  color: var(--secoend);
+}
 .crowe img {
   width: 40px;
   height: 40px;
@@ -400,7 +440,7 @@ nav .notf .i::before {
 .row .progress {
   width: 100%;
   background-color: #eee;
-  height: 5px;
+  height: 3px;
   border-radius: 5px;
 }
 .row h3 {
