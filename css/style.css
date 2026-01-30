@@ -20,10 +20,14 @@
   justify-content: center;
   align-items: center;
 }
+.justify-first {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 body {
@@ -58,7 +62,24 @@ button {
   border: none;
   background: none;
 }
-
+.active-bullet {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--main);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.unactive-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.txt-c {
+  text-align: center;
+}
 /* ===============================
    LAYOUT
 ================================ */
@@ -71,7 +92,7 @@ button {
   display: flex;
   gap: 1rem;
 }
-i{
+i {
   cursor: pointer;
 }
 img {
@@ -422,7 +443,7 @@ section.circle {
   padding-left: 10px;
   position: relative;
 }
-.crowe .row h3{
+.crowe .row h3 {
   color: var(--secoend);
 }
 .crowe img {
@@ -457,4 +478,31 @@ section.circle {
 }
 .row .progress .red {
   background-color: red;
+}
+.deadlines {
+  background-color: white;
+  box-shadow: 0px 3px 5px var(--shadow);
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .deadlines h2 {
+    text-align: center;
+  }
+}
+.deadlines .container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.deadlines .container .columns {
+  border: 1px solid black;
+}
+.deadlines .container .columns p:first-of-type {
+  font-size: 13px;
+  color: gray;
+  padding: 15px 0px;
 }
