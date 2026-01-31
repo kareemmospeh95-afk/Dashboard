@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .justify-first {
   display: flex;
   justify-content: flex-start;
@@ -50,7 +51,24 @@ body {
 *li {
   list-style: none;
 }
-
+.fs-14 {
+  font-size: 14px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.p-tb-15 {
+  padding: 15px 0px;
+}
+.fc-gr {
+  color: gray;
+}
+.fs-13 {
+  font-size: 13px;
+}
+.border-b {
+  border-bottom: 1px solid #ccc;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -64,15 +82,16 @@ button {
 }
 .active-bullet {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background-color: var(--main);
   border-radius: 50%;
   margin-right: 5px;
 }
 .unactive-bullet {
-  width: 10px;
-  height: 10px;
+  display: block;
+  width: 7px;
+  height: 7px;
   background-color: #aaa;
   border-radius: 50%;
   margin-right: 5px;
@@ -83,7 +102,12 @@ button {
 /* ===============================
    LAYOUT
 ================================ */
-
+section {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
 .container {
   width: 100%;
 }
@@ -121,7 +145,7 @@ img {
 
 @media (max-width: 767px) {
   .side {
-    padding: 15px 0;
+    padding: 10px 0;
   }
 
   .side span:first-child {
@@ -498,11 +522,60 @@ section.circle {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
-.deadlines .container .columns {
-  border: 1px solid black;
-}
+
 .deadlines .container .columns p:first-of-type {
   font-size: 13px;
   color: gray;
   padding: 15px 0px;
+}
+.con {
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .deadlines .container .columns {
+    text-align: center;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.blue {
+  color: blue;
+}
+.orange {
+  color: orangered;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+.reminders .checks {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 5px 30px;
+}
+.checks::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main);
+}
+.checks::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 100%;
+  left: 15px;
+  top: 0%;
+  background-color: var(--main);
 }
