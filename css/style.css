@@ -99,6 +99,13 @@ button {
 .txt-c {
   text-align: center;
 }
+
+
+@media (max-width: 500px){
+ .content h2{
+  font-size: 20px;
+}
+}
 /* ===============================
    LAYOUT
 ================================ */
