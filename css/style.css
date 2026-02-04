@@ -78,7 +78,11 @@ button {
   font: inherit;
   cursor: pointer;
   border: none;
-  background: none;
+  background: var(--main);
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px auto 0px auto;
+  color: #fff;
 }
 .active-bullet {
   display: block;
@@ -99,12 +103,18 @@ button {
 .txt-c {
   text-align: center;
 }
+
+@media (max-width: 500px) {
+  .content h2 {
+    font-size: 20px;
+  }
+}
+/*Dark mode*/
+
 /* ===============================
    LAYOUT
 ================================ */
 section {
-  margin-bottom: 20px;
-  background-color: white;
   padding: 15px;
   border-radius: 10px;
 }
@@ -146,6 +156,7 @@ img {
 @media (max-width: 767px) {
   .side {
     padding: 10px 0;
+    font-size: 16px;
   }
 
   .side span:first-child {
@@ -254,9 +265,9 @@ img {
 }
 
 .content nav {
-  background-color: white;
   width: 100%;
   padding: 10px 15px;
+  background-color: white;
 }
 
 .content nav .search {
@@ -275,7 +286,6 @@ img {
 nav .search i {
   color: grey;
 }
-
 .content nav .search input {
   outline: none;
   border: none;
@@ -330,6 +340,7 @@ section.cards {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   width: 100%;
+  background-color: unset;
 }
 @media (min-width: 1259px) {
   section.cards {
@@ -510,6 +521,7 @@ section.circle {
   padding: 15px;
   border-radius: 10px;
   width: 100%;
+  margin-bottom: 20px;
 }
 @media (max-width: 500px) {
   .deadlines h2 {
@@ -522,7 +534,6 @@ section.circle {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
-
 .deadlines .container .columns p:first-of-type {
   font-size: 13px;
   color: gray;
@@ -554,10 +565,31 @@ section.circle {
 .red {
   color: red;
 }
+.sec-5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+.reminders {
+  background: white;
+  padding-left: 25px;
+}
 .reminders .checks {
   position: relative;
   margin-bottom: 10px;
   padding: 5px 30px;
+}
+.reminders .checks p {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .mobile-font {
+    font-size: 16px;
+  }
+  .mobile-font-small {
+    font-size: 12px;
+  }
 }
 .checks::before {
   position: absolute;
@@ -565,10 +597,10 @@ section.circle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  left: -15px;
+  left: -12px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--main);
+  background-color: orange;
 }
 .checks::after {
   position: absolute;
@@ -577,5 +609,63 @@ section.circle {
   height: 100%;
   left: 15px;
   top: 0%;
+  background-color: orange;
+}
+.var::before,
+.var::after {
   background-color: var(--main);
+}
+
+.redd::before,
+.redd::after {
+  background-color: red;
+}
+.bl::before,
+.bl::after {
+  background-color: blue;
+}
+.draft {
+  background-color: white;
+}
+.draft p {
+  color: gray;
+  font-size: 15px;
+}
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 0px;
+  flex-direction: column;
+}
+.inputs input {
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: #eee;
+  padding-left: 5px;
+}
+.inputs input:first-child {
+  margin-bottom: 20px;
+  height: 35px;
+  border-radius: 5px;
+}
+.inputs .area {
+  border-radius: 5px;
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: #eee;
+  padding-left: 5px;
+  padding-top: 10px;
+  height: 200px;
+}
+::placeholder {
+  color: gray;
+  font-size: 18px;
+}
+.dark-m {
+  color: var(--main);
 }
