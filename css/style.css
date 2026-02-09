@@ -624,8 +624,8 @@ section.circle {
 .bl::after {
   background-color: blue;
 }
-.last::before,
-.last::after{
+.checks.last::before,
+.checks.last::after{
 background-color: #12B5B9;
 }
 .draft {
