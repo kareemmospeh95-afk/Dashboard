@@ -65,6 +65,9 @@ body {
 .p-tb-15 {
   padding: 15px 0px;
 }
+.p-15 {
+  padding: 15px;
+}
 .fc-gr {
   color: gray;
 }
@@ -144,7 +147,7 @@ img {
   display: grid;
   gap: 1rem;
 }
-.sec-grid{
+.sec-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -627,7 +630,7 @@ section.circle {
 .var::after {
   background-color: var(--main);
 }
-.redd{
+.redd {
   margin-bottom: 0px;
 }
 .redd::before,
@@ -639,8 +642,8 @@ section.circle {
   background-color: blue;
 }
 .checks.last::before,
-.checks.last::after{
-background-color: #12B5B9;
+.checks.last::after {
+  background-color: #12b5b9;
 }
 .draft {
   background-color: white;
@@ -710,4 +713,60 @@ background-color: #12B5B9;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.profile-info p {
+  color: gray;
+  padding: 5px;
+}
+
+.profile-info .edit {
+  display: block;
+  width: 100px;
+  background-color: var(--main);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+.toggle-check {
+  --webkit-appearance: none;
+  appearance: none;
+}
+.switch {
+  background-color: #ccc;
+  width: 70px;
+  height: 28px;
+  border-radius: 15px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.switch::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00d";
+  font-weight: 600;
+  font-size: 14px;
+  color: #ccc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.toggle-check:checked + .switch {
+  background-color: var(--main);
+}
+.toggle-check:checked + .switch::before {
+  left: 45px;
+  color: var(--main);
+  content: '\f00c';
 }

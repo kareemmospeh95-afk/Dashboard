@@ -8,4 +8,3 @@ let nav = document.querySelector("nav");
 btn.onclick = () =>{
   btn.classList.toggle("dark-m");
 };
-
